@@ -14,6 +14,7 @@
             <th scope="col">name</th>
             <th scope="col">email</th>
             <th scope="col">password</th>
+            <th sec:authorize="hasAuthority('ADMIN_ROLE')" scope="col">actions</th>
         </tr>
         </thead>
         <tbody>
@@ -22,6 +23,10 @@
             <td th:text="${user.getName()}">Mark</td>
             <td th:text="${user.getEmail()}">Otto</td>
             <td th:text="${user.getPassword()}">@mdo</td>
+            <td sec:authorize="hasAuthority('ADMIN_ROLE')">
+                <button>Delete</button>
+            </td>
+
         </tr>
         </tbody>
     </table>

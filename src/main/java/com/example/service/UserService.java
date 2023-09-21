@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 @AllArgsConstructor
 public class UserService {
@@ -20,5 +22,9 @@ public class UserService {
 
     public Object getAll() {
             return userRepo.findAll();
+    }
+
+    public void delete(Long id){
+            userRepo.deleteById(id);
     }
 }

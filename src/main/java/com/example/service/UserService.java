@@ -17,4 +17,8 @@ public class UserService {
             userEntity.setPassword(encoder().encode(userEntity.getPassword()));
             userRepo.save(userEntity);
         }
+
+    public Object getAll() {
+            return userRepo.findAll();
+    }
 }
